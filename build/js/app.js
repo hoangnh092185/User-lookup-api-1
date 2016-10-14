@@ -21,8 +21,9 @@ Lookup.prototype.getRepositories = function(userName){
     console.log(responseinfo);
     for(var i = 0; i < responseinfo.length; i++){
       // console.log(responseinfo[i].name);
-      var respositories = responseinfo[i].name
-      $('#showInfo').append(respositories + '<br>');
+      var respositories = responseinfo[i].name;
+      var homepage = responseinfo[i].html_url;
+      $('#showInfo').append('<a href="'+homepage+'">'+respositories +'</a><br>');
     }
   }).fail(function(error) {
     console.log(error.responseJSON.message);
@@ -40,6 +41,7 @@ $(document).ready(function() {
   $('#find-username').click(function(event) {
     event.preventDefault();
     $('#showUserName').text("");
+    $('#showInfo').text("");
     var username = $('#userName').val();
     $('#userName').val("");
     currentUserNameObject.getUserInfo(username);

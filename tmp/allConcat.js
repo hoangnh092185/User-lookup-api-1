@@ -6,6 +6,7 @@ $(document).ready(function() {
   $('#find-username').click(function(event) {
     event.preventDefault();
     $('#showUserName').text("");
+    $('#showInfo').text("");
     var username = $('#userName').val();
     $('#userName').val("");
     currentUserNameObject.getUserInfo(username);
