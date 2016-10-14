@@ -28,7 +28,7 @@ Lookup.prototype.getRepositories = function(userName){
     console.log(error.responseJSON.message);
     $('#showInfo').text("Oops! No respositories were found.");
   });
-}
+};
 exports.lookupModule = Lookup;
 
 },{"./../.env":1}],3:[function(require,module,exports){
