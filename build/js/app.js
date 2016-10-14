@@ -20,7 +20,6 @@ Lookup.prototype.getRepositories = function(userName){
   $.get('https://api.github.com/users/' + userName + '/repos?access_token=' + apiKey).then(function(responseinfo) {
     console.log(responseinfo);
     for(var i = 0; i < responseinfo.length; i++){
-      // console.log(responseinfo[i].name);
       var respositories = responseinfo[i].name;
       var homepage = responseinfo[i].html_url;
       $('#showInfo').append('<a href="'+homepage+'">'+respositories +'</a><br>');
